@@ -1,6 +1,8 @@
+const fetch = require("node-fetch");
+const url = "https://api.github.com/repos/hamberg1/md_blog/contents/contents";
+
 exports.handler = async event => {
   const subject = event.queryStringParameters.serial || 'World'
-  const url = "https://api.github.com/repos/hamberg1/md_blog/contents/contents";
   const key 
   fetch(url)
   .then(re=>re.json())
