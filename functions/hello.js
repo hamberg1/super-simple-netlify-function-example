@@ -1,9 +1,7 @@
 exports.handler = async event => {
-  const subject = event.queryStringParameters.name || 'World'
+  const subject = event.queryStringParameters.name || 'direct'
   //const url = "https://api.github.com/repos/hamberg1/md_blog_production/contents/contents";
-  return {
-    statusCode: 200,
-    body: `<!DOCTYPE html>
+  var ksm = (subject!= 'direct')? `<!DOCTYPE html>
 	<html lang="en">
 	<head>
 	<meta charset="UTF-8">
@@ -29,6 +27,11 @@ exports.handler = async event => {
 	The New Blog 
     </div>
     <ul class="nav navbar-nav">
+		<button id="share" type="button" class="btn btn-secondary" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
+    <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"></path>
+    </svg>
+    </button>
     </ul>
 	
     
@@ -55,6 +58,9 @@ exports.handler = async event => {
 	</script>
 	</body>
 
-	</html>`
+	</html>`:`<html><head></head><body><script>window.loaction = window.origin </script></body></html>`
+  return {
+    statusCode: 200,
+    body: ksm
   }
 }
