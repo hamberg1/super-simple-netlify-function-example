@@ -58,7 +58,7 @@ exports.handler = async event => {
 	</script>
 	</body>
 
-	</html>`:`<html><head></head><body><script>window.loaction = window.origin </script></body></html>`
+	</html>`:`<html><head></head><body><script>window.location = window.origin </script></body></html>`
   return {
     statusCode: 200,
     body: ksm
