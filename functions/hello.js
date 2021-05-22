@@ -3,6 +3,6 @@ exports.handler = async event => {
   //const url = "https://api.github.com/repos/hamberg1/md_blog/contents/contents";
   return {
     statusCode: 200,
-    body: `</h1> ${subject}</h1>`
+    body: `<h1> ${subject}</h1>`
   }
 }
