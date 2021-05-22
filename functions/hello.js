@@ -36,7 +36,7 @@ exports.handler = async event => {
 	</nav>
 	<div id="art1">
 	<zero-md src="https://raw.githubusercontent.com/hamberg1/md_blog/main/contents/${subject}">
-	<template><link rel="stylesheet" href="./styles.css"></template>
+	<template><link rel="stylesheet" href="https://minimal-post.netlify.app/styles.css"></template>
 	</zero-md>
 	</div> 
 
