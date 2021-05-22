@@ -1,6 +1,6 @@
 exports.handler = async event => {
   const subject = event.queryStringParameters.name || 'World'
-  //const url = "https://api.github.com/repos/hamberg1/md_blog/contents/contents";
+  //const url = "https://api.github.com/repos/hamberg1/md_blog_production/contents/contents";
   return {
     statusCode: 200,
     body: `<!DOCTYPE html>
@@ -35,7 +35,7 @@ exports.handler = async event => {
 	</div>
 	</nav>
 	<div id="art1">
-	<zero-md src="https://raw.githubusercontent.com/hamberg1/md_blog/main/contents/${subject}">
+	<zero-md src="https://raw.githubusercontent.com/hamberg1/md_blog_production/main/contents/${subject}">
 	<template><link rel="stylesheet" href="https://minimal-post.netlify.app/styles.css"></template>
 	</zero-md>
 	</div> 
@@ -50,7 +50,7 @@ exports.handler = async event => {
 				document.getElementById("nav_head").style = "font-weight: bold;font-size: 27px;color: #a9a9b3;margin-left: 5%;"
 			}
 	document.getElementById("nav_head").onclick = () =>{
-	location.reload()
+		window.location = window.origin;
 	}
 	</script>
 	</body>
